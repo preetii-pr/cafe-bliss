@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html >
+<head>
+    
+    <title>My Cafe</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <nav>
+    <h1>Cafe Bliss</h1>
+    <div class="nav-links">
+        <a href="#">Home</a>
+        <a href="#">Menu</a>
+        <a href="#">About</a>
+        <a href="#">Contact</a>
+    </div>
+    </nav>
+    <
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Welcom to Brew Haven</h1>
+            <P>Fresh Coffee, delicious food and good vibes</P>
+            <a href="#menu" class="btn">view our menu</a>
+            </div>
+    </section>
+    <section id="menu" class="menu">
+        <h2>Our Menu</h2>
+        <p>Freshly prepared with love</p>
+    </section>
+    <section class="menu">
+   
+
+    <div class="menu-container">
+        <div class="menu-card">
+            <h3>☕ Cappuccino</h3>
+            <p>Rich espresso with steamed milk.</p>
+            <span>₹120</span>
+        </div>
+
+        <div class="menu-card">
+            <h3>🍰 Chocolate Cake</h3>
+            <p>Soft and delicious chocolate cake.</p>
+            <span>₹150</span>
+        </div>
+
+        <div class="menu-card">
+            <h3>🥪 Grilled Sandwich</h3>
+            <p>Freshly grilled with tasty fillings.</p>
+            <span>₹130</span>
+        </div>
+    </div>
+</section>
+    <section class="hero">
+        <h2> Welcom to Cafe Bliss</h2>
+        <P>Fresh coffee,delicious food and good vibes</P
+            <button>Order Now</button>>
+
+    </section>
+    <section class="about">
+    <h2>About Cafe Bliss</h2>
+    <p>
+        Cafe Bliss is a cozy place where great coffee,
+        delicious food and good vibes come together.
+        We are here to make every visit special.
+    </p>
+</section>
+<section class="Contact">
+    <h2>Contact us</h2>
+    <p>📍 Visit us for great coffee and delicious food!</p>
+    <p>📞 +91 98765 43210</p>
+    <p>✉️ cafebliss@email.com</p>
+</section>
+
+<footer>
+    <p>© 2026 Cafe Bliss. All Rights Reserved.</p>
+</footer>
+
+</section>
+
+<!--back to top bottom-->
+<buttom id="backToTop" aria-lable="Back to Top">^</buttom>
+<script>
+    //select the button
+    const backToTop= document.getElementById("backToTop");
+    //show button when scrolling down
+    window.addEventListener("scroll",function(){
+        if(window.scrollY>300){
+            backToTop.classList.add("show");
+        }else{
+            backToTop.classList.remove("show");
+        }
+    });
+    //Return to the top when clicked
+    backToTop.addEventListener("click", function() {
+        window.scrollTo({
+            top:0,
+            behavior:"smooth"
+        });
+    
+    });
+    //reveal section as tyhey enter the screen
+    const revealElements= document.querySelectorAll("section,footer,.menu-item");
+    revealElements.forEach(function(elements){
+        element.classList.add("reveal");
+    });
+    constvobserver=new
+    IntersectionObserver(function(entries){
+        entries.forEach(function(entry){
+            if(entry.isIntersecting){
+                entry.target.classList.add("visible");
+                observer.unobserve(entry.target);
+            }
+        });
+    },{
+        threshold:0.15
+    });
+    revealElements.forEach(function(element){
+        observer.observe(element);
+    });
+</script>
+</body>
+</html>
