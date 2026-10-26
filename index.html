@@ -35,19 +35,31 @@
             <h3>☕ Cappuccino</h3>
             <p>Rich espresso with steamed milk.</p>
             <span>₹120</span>
+            <button class="add-to-cart" data-name="Cappuccino" data-price="120">
+                Add to Cart
+            </button>
         </div>
 
         <div class="menu-card">
             <h3>🍰 Chocolate Cake</h3>
             <p>Soft and delicious chocolate cake.</p>
             <span>₹150</span>
+            <button class="add-to-cart" data-name="Chocolate cake" data-price="150">
+                Add to Cart
+            </button>
         </div>
 
         <div class="menu-card">
             <h3>🥪 Grilled Sandwich</h3>
             <p>Freshly grilled with tasty fillings.</p>
             <span>₹130</span>
+            <button class="add-to-cart" data-name="Grilled Sandwich" data-price="130">
+                Add to Cart
+            </button>
         </div>
+    </div>
+    <div class="cart-status">
+        Cart:<span id="cart-count">0</span>
     </div>
 </section>
     <section class="hero">
@@ -100,10 +112,10 @@
     });
     //reveal section as tyhey enter the screen
     const revealElements= document.querySelectorAll("section,footer,.menu-item");
-    revealElements.forEach(function(elements){
+    revealElements.forEach(function(element){
         element.classList.add("reveal");
     });
-    constvobserver=new
+    const observer=new
     IntersectionObserver(function(entries){
         entries.forEach(function(entry){
             if(entry.isIntersecting){
@@ -116,6 +128,23 @@
     });
     revealElements.forEach(function(element){
         observer.observe(element);
+    });
+    let cartCount=0;
+    let cartTotal=0;
+    const cartDisplay=document.getElementById("cart-count");
+    const cartButtons=document.querySelectorAll(".add-to-cart");
+    cartButtons.forEach(function(button){
+        button.addEventListener("click",function(){
+            const itemName=button.dataset.name;
+            const itemPrice=Number(button.dataset.price);
+            cartCount++;
+            cartTotal += itemPrice;
+
+            cartDisplay.textContent = cartCount;
+            button.textContent="Added";
+            console.log(itemName +"added to card");
+            console.log("cart total:Rupees"+cartTotal);
+        });
     });
 </script>
 </body>

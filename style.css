@@ -390,3 +390,70 @@ html {
 .hero p {
     animation: titleEntrance 1s ease-out 0.3s both;
 }
+/*=======cafe's menu interaction======*/
+.menu-item,
+.menu-card,
+.menu .card {
+    transition:
+    tranform 0.35s ease,
+    box-shadow 0.35s;
+     
+}
+/*Lift the menu caed*/
+.menu-item:hover,
+.menu-card:hover,
+.menu .card:hover{
+    transform: translateY(-8px);
+    box-shadow:0 14px 30px rgba(0, 0, 0, 0.16);
+}
+/*smooth image zoom*/
+.menu-item img,
+.menu-card img,
+.menu .card img{
+    transition:transform 0.4s ease;
+}
+
+.menu-item:hover img,
+.menu-card:hover img,
+.menu .card:hover img {
+    transform: scale(1.06);
+}
+
+/* Interactive menu buttons */
+.menu-item button,
+.menu-card button,
+.menu .card button,
+.menu-item .btn,
+.menu-card .btn {
+    transition:
+        transform 0.25s ease,
+        box-shadow 0.25s ease,
+        filter 0.25s ease;
+}
+
+.menu-item button:hover,
+.menu-card button:hover,
+.menu .card button:hover,
+.menu-item .btn:hover,
+.menu-card .btn:hover {
+    transform: translateY(-2px);
+    filter: brightness(1.08);
+    box-shadow: 0 5px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* Respect reduced-motion preferences */
+@media (prefers-reduced-motion: reduce) {
+    .menu-item,
+    .menu-card,
+    .menu .card,
+    .menu-item img,
+    .menu-card img,
+    .menu .card img,
+    .menu-item button,
+    .menu-card button,
+    .menu .card button,
+    .menu-item .btn,
+    .menu-card .btn {
+        transition: none;
+    }
+}
