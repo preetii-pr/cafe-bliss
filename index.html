@@ -59,7 +59,8 @@
         </div>
     </div>
     <div class="cart-status">
-        Cart:<span id="cart-count">0</span>
+      <p>Cart Items:<span id="cart-count">0</span></p>
+      <p>Cart Total: Rupees<span id="cart-total"></span></p>
     </div>
 </section>
     <section class="hero">
@@ -132,6 +133,7 @@
     let cartCount=0;
     let cartTotal=0;
     const cartDisplay=document.getElementById("cart-count");
+    const totalDisplay=document.getElementById("cart-total");
     const cartButtons=document.querySelectorAll(".add-to-cart");
     cartButtons.forEach(function(button){
         button.addEventListener("click",function(){
@@ -140,9 +142,10 @@
             cartCount++;
             cartTotal += itemPrice;
 
-            cartDisplay.textContent = cartCount;
+            cartDisplay.textContent=cartCount;
+            totalDisplay.textContent=cartTotal;
             button.textContent="Added";
-            console.log(itemName +"added to card");
+            console.log(itemName + "added to card");
             console.log("cart total:Rupees"+cartTotal);
         });
     });
