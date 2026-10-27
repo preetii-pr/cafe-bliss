@@ -542,3 +542,175 @@ footer {
         background-position: center;
     }
 }
+/* ===== BREW HAVEN: MOBILE RESPONSIVE FIXES ===== */
+
+/* Prevent horizontal scrolling */
+html {
+    width: 100%;
+    overflow-x: hidden;
+}
+
+body {
+    width: 100%;
+    overflow-x: hidden;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* Tablet and mobile devices */
+@media (max-width: 768px) {
+
+    /* Navigation */
+    nav {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 15px;
+        padding: 18px 16px;
+        text-align: center;
+    }
+
+    nav h1,
+    nav h2 {
+        max-width: 100%;
+        font-size: 24px;
+    }
+
+    nav ul {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 12px;
+        padding: 0;
+    }
+
+    .nav-links a,
+    nav a {
+        margin-left: 0;
+        font-size: 16px;
+    }
+
+    /* Hero section */
+    .hero {
+        min-height: 65vh;
+        padding: 65px 18px;
+        background-position: center;
+    }
+
+    .hero-content {
+        width: 100%;
+        max-width: 100%;
+    }
+
+    .hero h1 {
+        font-size: clamp(30px, 7vw, 42px);
+        line-height: 1.2;
+        overflow-wrap: anywhere;
+    }
+
+    .hero h2 {
+        font-size: clamp(27px, 6vw, 36px);
+    }
+
+    .hero p {
+        font-size: 17px;
+        line-height: 1.6;
+    }
+
+    /* Menu section */
+    .menu,
+    .about,
+    .contact {
+        padding: 45px 16px;
+        background-position: center;
+    }
+
+    .menu h2,
+    .about h2,
+    .contact h2 {
+        font-size: 28px;
+    }
+
+    /* Keep cards in a neat, centered layout */
+    .menu-items,
+    .menu-container {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: stretch;
+        gap: 16px;
+    }
+
+    .menu-card,
+    .menu-item,
+    .menu .card {
+        box-sizing: border-box;
+        width: min(100%, 320px);
+        max-width: 100%;
+        margin: 0;
+    }
+
+    /* Text */
+    .about p,
+    .contact p {
+        font-size: 16px;
+        line-height: 1.7;
+        overflow-wrap: anywhere;
+    }
+
+    /* Buttons */
+    .btn,
+    .hero button {
+        max-width: 100%;
+        padding: 12px 20px;
+    }
+
+    /* Footer */
+    footer {
+        padding: 20px 14px;
+        overflow-wrap: anywhere;
+    }
+}
+
+/* Extra-small phones */
+@media (max-width: 400px) {
+
+    nav {
+        padding: 15px 10px;
+    }
+
+    nav h1,
+    nav h2 {
+        font-size: 21px;
+    }
+
+    nav ul {
+        gap: 10px;
+    }
+
+    .hero {
+        padding: 50px 14px;
+    }
+
+    .hero h1 {
+        font-size: 30px;
+    }
+
+    .menu,
+    .about,
+    .contact {
+        padding: 35px 12px;
+    }
+
+    .menu-card,
+    .menu-item,
+    .menu .card {
+        padding: 18px;
+    }
+
+    #backToTop {
+        right: 14px;
+        bottom: 14px;
+    }
+}
