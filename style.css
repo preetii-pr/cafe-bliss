@@ -1,425 +1,233 @@
-body{
-background-color: #F4F1DE;
-font-family: Arial, Helvetica, sans-serif;
-color: #263238;
-} 
-nav{
-    display:flex;
-    justify-content: space-between;
-    align-items: centre;
-    padding: 20px 40px;
-    background-color: rgb(165, 42, 91);
-}
-nav h1{
-    color: white;
-}
-.nav-links a {
-    color: white;
-    text-decoration: none;
-    margin-left: 20px;
-}
-.hero{
-    text-align: center;
-    padding: 100px 20px;
-    background-color: #3D5A40;
-    color: #FAF9F6;
-
-}
-.hero h2{
-     font-size:45px ;
-}
-.hero p{
- font-size: 20px;
-}
-.hero button{
-    padding: 12px 25px;
-font-size: 16px;
-cursor: pointer;
-}
-.hero{
-    height: 80vh;
-    display: flex;
-    justify-content:center;
-    align-items:center;
-    text-align:center;
-background-image:url("");
-background-size: cover;
-background-position: center;
-}
-.hero content h1{
-    font-size:50px;
-}
-.hero-content p{
-    font-size:20px;
-    margin:20px0;
-}
-.hero-content button{
-    padding: 12px 25px;
-    font-size:16px;
-    cursor:pointer;
-}
-nav{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-padding: 20px 50px;
-}
-nav h2{
-    font-size:28px;
-}
-nav ul{
-    display:flex;
-    list-style: none;
-    gap: 30px;
-}
-nav a{
-    text-decoration: none;
-    color: black;
-    font-size: 18px;
-}
-.menu {
-    padding: 60px 20px;
-    text-align: center;
-    background-color: #f8f1e7;
+/* ===== Cafe Bliss Colour Palette ===== */
+:root {
+    --maroon: #253A4A;
+    --champagne: #F7F4E3;
+    --bronze: #E0A840;
+    --cream: #CDC6B6;
+    --white: #FFFFFF;
 }
 
-.menu h2 {
-    font-size: 32px;
-    margin-bottom: 30px;
+/* ===== General Styling ===== */
+* {
+    box-sizing: border-box;
 }
 
-.menu-items {
-    display: flex;
-    justify-content: center;
-    gap: 25px;
-    flex-wrap: wrap;
-}
-
-.menu-card {
-    background-color: white;
-    width: 250px;
-    padding: 25px;
-    border-radius: 12px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
-}
-
-.menu-card h3 {
-    margin-bottom: 12px;
-}
-
-.menu-card p {
-    color: #555;
-}
-
-.menu-card span {
-    display: block;
-    margin-top: 15px;
-    font-weight: bold;
-    font-size: 18px;
-}
-.about {
-    padding: 60px 20px;
-    text-align: center;
-    background-color: #fff;
-}
-
-.about h2 {
-    font-size: 32px;
-    margin-bottom: 20px;
-}
-
-.about p {
-    max-width: 700px;
-    margin: 0 auto;
-    line-height: 1.7;
-    color: #b9d778;
-}
-body{
-    margin:0;
-    font-family: Arial, sans-serif;
-    background-color: #f5f5f5;
-    color:#333;
-}
-.hero{
-    background-color: #b4cc72;
-    color: white;
-    text-align: center;
-    padding: 80px 20px;
-    min-height: 70vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-}
-.hero h1{
-    font-size: 50px;
-    margin-bottom: 15px;
-}
-.hero p{
-    font-size: 20px;
-    margin-bottom: 25px;
-}
-.hero button{
-
-    padding: 12px 25px;
-    border: none;
-    background-color: white;
-    color: #a6e476;
-    cursor: pointer;
-    font-size: 16px;
-    border-radius: 5px;
-}
-.hero button:hover{
-    background-color:#ddd;
-}
-/* Menu Section */
-.menu {
-    padding: 60px 20px;
-    text-align: center;
-     background-color: #FAF9F6;
-    color: #263238;
-}
-
-.menu h2 {
-    font-size: 32px;
-    margin-bottom: 30px;
-    color: #3D5A40;
-}
-
-/* Menu Cards */
-.menu-card {
-    background-color: white;
-    width: 250px;
-    padding: 20px;
-    margin: 20px auto;
-    border-radius: 10px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-}
-
-.menu-card h3 {
-    font-size: 22px;
-}
-
-.menu-card p {
-    
-    color: white;
-}
-
-.menu-card span {
-    display: block;
-    font-weight: bold;
-    margin-top: 10px;
-    color: rgb(168, 41, 118);
-}
-/* Menu Container */
-.menu-container {
-    display: flex;
-    justify-content: center;
-    gap: 20px;
-    flex-wrap: wrap;
-}
-/* About Section */
-.about {
-    background-color: white;
-    padding: 60px 20px;
-    text-align: center;
-}
-
-.about h2 {
-    font-size: 32px;
-    margin-bottom: 20px;
-}
-
-.about p {
-    font-size: 18px;
-    max-width: 600px;
-    margin: auto;
-    line-height: 1.6;
-    color: #666;
-}
-/* Contact Section */
-.contact {
-    padding: 50px 20px;
-    text-align: center;
-    background-color: #f5f5f5;
-}
-
-.contact h2 {
-    font-size: 30px;
-    margin-bottom: 20px;
-}
-
-.contact p {
-    font: size 18px;
-    margin: 15px 0;
-}
-
-/* Footer */
-footer {
-    background-color: #333;
-    color: white;
-    text-align: center;
-    padding: 20px;
-}
-.btn {
-    display: inline-block;
-    background-color: #D4A373;
-    color: #1c1f21;
-    padding: 12px 25px;
-    text-decoration: none;
-    border-radius: 5px;
-    margin-top: 20px;
-    transition: 0.3s;
-}
-.btn:hover{
-     background-color: #FAF9F6;
-    color: #95d99c;
-}
-/* ===== Cafe Bliss Animations ===== */
-
-/* Smooth scrolling */
 html {
     scroll-behavior: smooth;
 }
 
-/* Button hover animation */
-.btn {
-    transition: transform 0.3s ease,
-                background-color 0.3s ease,
-                box-shadow 0.3s ease;
+body {
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: var(--champagne);
+    color: var(--maroon);
 }
 
-.btn:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 8px 18px rgba(230, 108, 169, 0.18);
+/* ===== Navigation Bar ===== */
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 40px;
+    background-color: var(#0D1419);
+    color: var(--champagne);
 }
 
-/* Interactive menu cards */
-.menu-item {
-    transition: transform 0.3s ease,
-                box-shadow 0.3s ease;
+nav h1,
+nav h2 {
+    color: #E0A840;
+    margin: 0;
 }
 
-.menu-item:hover {
-    transform: translateY(-8px) scale(1.02);
-    box-shadow: 0 12px 25px rgba(229, 116, 188, 0.14);
+nav h2 {
+    font-size: 28px;
 }
 
-/* Scroll reveal animation */
-.reveal {
-    opacity: 0;
-    transform: translateY(30px);
-    transition: opacity 0.7s ease,
-                transform 0.7s ease;
+.nav-links a,
+nav a {
+    color: var(--champagne);
+    text-decoration: none;
+    font-size: 18px;
+    margin-left: 20px;
+    transition: color 0.3s ease;
 }
 
-.reveal.visible {
-    opacity: 1;
-    transform: translateY(0);
+nav a:hover {
+    color: var(--bronze);
 }
 
-/* Back-to-top button */
-#backToTop {
-    position: fixed;
-    right: 22px;
-    bottom: 22px;
-    width: 45px;
-    height: 45px;
-    border: none;
-    border-radius: 50%;
-    background: #a2dd6e;
-    color: white;
-    font-size: 22px;
-    cursor: pointer;
-    opacity: 0;
-    visibility: hidden;
-    transform: translateY(10px);
-    transition: all 0.3s ease;
-    z-index: 1000;
+nav ul {
+    display: flex;
+    align-items: center;
+    list-style: none;
+    gap: 20px;
+    margin: 0;
+    padding: 0;
 }
 
-#backToTop.show {
-    opacity: 1;
-    visibility: visible;
-    transform: translateY(0);
+/* ===== Hero Section ===== */
+.hero {
+    min-height: 80vh;
+    padding: 80px 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background: linear-gradient(
+        135deg,
+        #253A4A,
+    #0D1419,
+        var(--bronze)
+    );
+    color: var(--champagne);
 }
 
-#backToTop:hover {
-    background: #71dc5c;
-    transform: translateY(-4px);
+.hero-content {
+    max-width: 800px;
 }
 
-/* Respect reduced-motion preferences */
-@media (prefers-reduced-motion: reduce) {
-    html {
-        scroll-behavior: auto;
-    }
-
-    .btn,
-    .menu-item,
-    .reveal,
-    #backToTop {
-        transition: none;
-    }
-
-    .reveal {
-        opacity: 1;
-        transform: none;
-    }
-}
-/* Animated hero heading */
 .hero h1 {
+    font-size: 50px;
+    margin-bottom: 15px;
     animation: titleEntrance 1s ease-out both;
 }
 
-@keyframes titleEntrance {
-    from {
-        opacity: 0;
-        transform: translateY(25px);
-        letter-spacing: 2px;
-    }
-
-    to {
-        opacity: 1;
-        transform: translateY(0);
-        letter-spacing: normal;
-    }
+.hero h2 {
+    font-size: 45px;
+    margin-bottom: 15px;
 }
 
-/* Animated hero paragraph */
 .hero p {
+    font-size: 20px;
+    margin: 20px 0;
     animation: titleEntrance 1s ease-out 0.3s both;
 }
-/*=======cafe's menu interaction======*/
-.menu-item,
-.menu-card,
-.menu .card {
+
+/* ===== Buttons ===== */
+.btn,
+.hero button {
+    display: inline-block;
+    padding: 12px 25px;
+    border: 1px solid var(--bronze);
+    border-radius: 5px;
+    background-color: var(--maroon);
+    color: var(--champagne);
+    font-size: 16px;
+    text-decoration: none;
+    cursor: pointer;
     transition:
-    tranform 0.35s ease,
-    box-shadow 0.35s;
-     
+        transform 0.3s ease,
+        background-color 0.3s ease,
+        color 0.3s ease,
+        box-shadow 0.3s ease;
 }
-/*Lift the menu caed*/
+
+.btn {
+    margin-top: 20px;
+}
+
+.btn:hover,
+.hero button:hover {
+    background-color: var(--bronze);
+    color: var(--maroon);
+    transform: translateY(-4px);
+    box-shadow: 0 8px 18px rgba(89, 23, 27, 0.25);
+}
+
+/* ===== Menu Section ===== */
+.menu {
+    padding: 60px 20px;
+    text-align: center;
+    background-color: #F7F4E3;
+    color: #253A4A;
+    border: 1px solid #CDC6B6;
+}
+
+.menu h2,
+.about h2,
+.contact h2 {
+    font-size: 32px;
+    margin-bottom: 30px;
+    color: var(--maroon);
+}
+
+/* ===== Menu Items Container ===== */
+.menu-items,
+.menu-container {
+    display: flex;
+    justify-content: center;
+    align-items: stretch;
+    gap: 25px;
+    flex-wrap: wrap;
+}
+
+/* ===== Menu Cards ===== */
+.menu-card,
+.menu-item,
+.menu .card {
+    background-color: var(--cream);
+    color: var(--maroon);
+    width: 250px;
+    padding: 25px;
+    margin: 10px;
+    border: 1px solid var(--bronze);
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(89, 23, 27, 0.12);
+    transition:
+        transform 0.35s ease,
+        box-shadow 0.35s ease;
+}
+
+.menu-card h3,
+.menu-item h3,
+.menu .card h3 {
+    font-size: 22px;
+    margin-bottom: 12px;
+    color: var(--maroon);
+}
+
+.menu-card p,
+.menu-item p,
+.menu .card p {
+    color: var(--maroon);
+    line-height: 1.6;
+}
+
+.menu-card span,
+.menu-item span,
+.menu .card span {
+    display: block;
+    margin-top: 15px;
+    font-size: 18px;
+    font-weight: bold;
+    color: var(--bronze);
+}
+
+/* ===== Menu Card Hover Effects ===== */
 .menu-item:hover,
 .menu-card:hover,
-.menu .card:hover{
-    transform: translateY(-8px);
-    box-shadow:0 14px 30px rgba(0, 0, 0, 0.16);
+.menu .card:hover {
+    transform: translateY(-8px) scale(1.02);
+    box-shadow: 0 14px 30px rgba(89, 23, 27, 0.22);
 }
-/*smooth image zoom*/
+
+/* ===== Menu Image Zoom ===== */
 .menu-item img,
 .menu-card img,
-.menu .card img{
-    transition:transform 0.4s ease;
+.menu .card img {
+    max-width: 100%;
+    border-radius: 8px;
+    transition: transform 0.4s ease;
 }
 
 .menu-item:hover img,
 .menu-card:hover img,
 .menu .card:hover img {
-    transform: scale(1.06);
+    transform: scale(1.04);
 }
 
-/* Interactive menu buttons */
+/* ===== Menu Button Effects ===== */
 .menu-item button,
 .menu-card button,
 .menu .card button,
@@ -437,12 +245,162 @@ html {
 .menu-item .btn:hover,
 .menu-card .btn:hover {
     transform: translateY(-2px);
-    filter: brightness(1.08);
-    box-shadow: 0 5px 12px rgba(0, 0, 0, 0.15);
+    filter: brightness(1.05);
+    box-shadow: 0 5px 12px rgba(89, 23, 27, 0.18);
 }
 
-/* Respect reduced-motion preferences */
+/* ===== About Section ===== */
+.about {
+    padding: 60px 20px;
+    text-align: center;
+    background-color: var(--cream);
+    color: var(--maroon);
+}
+
+.about h2 {
+    margin-bottom: 20px;
+}
+
+.about p {
+    max-width: 700px;
+    margin: 0 auto;
+    font-size: 18px;
+    line-height: 1.7;
+    color: var(--maroon);
+}
+
+/* ===== Contact Section ===== */
+.contact {
+    padding: 50px 20px;
+    text-align: center;
+    background-color: var(--bronze);
+    color: var(--maroon);
+}
+
+.contact h2 {
+    margin-bottom: 20px;
+}
+
+.contact p {
+    font-size: 18px;
+    margin: 15px 0;
+}
+
+/* ===== Footer ===== */
+footer {
+    padding: 20px;
+    text-align: center;
+    background-color: #0D1419;
+    color: #F7F4E3;
+}
+
+/* ===== Scroll Reveal Animation ===== */
+.reveal {
+    opacity: 0;
+    transform: translateY(30px);
+    transition:
+        opacity 0.7s ease,
+        transform 0.7s ease;
+}
+
+.reveal.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* ===== Back-to-Top Button ===== */
+#backToTop {
+    position: fixed;
+    right: 22px;
+    bottom: 22px;
+    width: 45px;
+    height: 45px;
+    border: 1px solid var(--bronze);
+    border-radius: 50%;
+    background-color: var(--maroon);
+    color: var(--champagne);
+    font-size: 22px;
+    cursor: pointer;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(10px);
+    transition: all 0.3s ease;
+    z-index: 1000;
+}
+
+#backToTop.show {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+#backToTop:hover {
+    background-color: var(--bronze);
+    color: var(--maroon);
+    transform: translateY(-4px);
+}
+
+/* ===== Hero Heading Animation ===== */
+@keyframes titleEntrance {
+    from {
+        opacity: 0;
+        transform: translateY(25px);
+        letter-spacing: 2px;
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+        letter-spacing: normal;
+    }
+}
+
+/* ===== Mobile Responsive Styling ===== */
+@media (max-width: 600px) {
+    nav {
+        padding: 15px 20px;
+        flex-wrap: wrap;
+        gap: 15px;
+    }
+
+    nav ul {
+        gap: 12px;
+        flex-wrap: wrap;
+    }
+
+    .nav-links a,
+    nav a {
+        font-size: 15px;
+        margin-left: 0;
+    }
+
+    .hero h1 {
+        font-size: 36px;
+    }
+
+    .hero h2 {
+        font-size: 32px;
+    }
+
+    .hero p {
+        font-size: 18px;
+    }
+
+    .menu-card,
+    .menu-item,
+    .menu .card {
+        max-width: 100%;
+    }
+}
+
+/* ===== Respect Reduced Motion Preferences ===== */
 @media (prefers-reduced-motion: reduce) {
+    html {
+        scroll-behavior: auto;
+    }
+
+    .btn,
+    .hero button,
     .menu-item,
     .menu-card,
     .menu .card,
@@ -452,8 +410,135 @@ html {
     .menu-item button,
     .menu-card button,
     .menu .card button,
-    .menu-item .btn,
-    .menu-card .btn {
+    .reveal,
+    #backToTop {
         transition: none;
+    }
+
+    .hero h1,
+    .hero p {
+        animation: none;
+    }
+
+    .reveal {
+        opacity: 1;
+        transform: none;
+    }
+}
+/* ===== BREW HAVEN BACKGROUND IMAGES ===== */
+
+/* Keep the navbar clean and luxurious */
+nav {
+    background-color: #0D1419;
+    border-bottom: 2px solid #E0A840;
+}
+
+/* ===== Hero: Luxury Cafe Background ===== */
+.hero {
+    position: relative;
+    isolation: isolate;
+    background:
+        linear-gradient(
+            rgba(13, 20, 25, 0.55),
+            rgba(13, 20, 25, 0.70)
+        ),
+        url("https://images.unsplash.com/photo-1445116572660-236099ec97a0?auto=format&fit=crop&w=1800&q=85")
+        center / cover no-repeat;
+    color: #F7F4E3;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 1;
+}
+
+.hero h1 {
+    color: #E0A840;
+}
+
+/* ===== Menu: Subtle Coffee Background ===== */
+.menu {
+    background:
+        linear-gradient(
+            rgba(247, 244, 227, 0.88),
+            rgba(247, 244, 227, 0.92)
+        ),
+        url("https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?auto=format&fit=crop&w=1600&q=85")
+        center / cover no-repeat;
+    color: #253A4A;
+}
+
+/* Preserve the menu card layout */
+.menu-container,
+.menu-items {
+    display: flex;
+    justify-content: center;
+    align-items: stretch;
+    flex-wrap: wrap;
+    gap: 25px;
+}
+
+.menu-card,
+.menu-item,
+.menu .card {
+    background-color: #F7F4E3;
+    color: #253A4A;
+    border: 1px solid #E0A840;
+    border-radius: 12px;
+}
+
+/* ===== About: Atmospheric Cafe Interior ===== */
+.about {
+    background:
+        linear-gradient(
+            rgba(13, 20, 25, 0.76),
+            rgba(13, 20, 25, 0.76)
+        ),
+        url("https://images.unsplash.com/photo-1554118811-1e0d58224f24?auto=format&fit=crop&w=1600&q=85")
+        center / cover no-repeat;
+    color: #F7F4E3;
+}
+
+.about h2,
+.about p {
+    color: #F7F4E3;
+}
+
+/* ===== Contact: Warm Cafe Ambience ===== */
+.contact {
+    background:
+        linear-gradient(
+            rgba(37, 58, 74, 0.86),
+            rgba(13, 20, 25, 0.90)
+        ),
+        url("https://images.unsplash.com/photo-1517248135467-4b7edcad34c4?auto=format&fit=crop&w=1600&q=85")
+        center / cover no-repeat;
+    color: #F7F4E3;
+}
+
+.contact h2,
+.contact p {
+    color: #F7F4E3;
+}
+
+/* ===== Footer: Midnight Navy ===== */
+footer {
+    background-color: #0D1419;
+    color: #F7F4E3;
+    border-top: 2px solid #E0A840;
+}
+
+/* ===== Mobile Background Adjustments ===== */
+@media (max-width: 600px) {
+    .hero {
+        background-position: center;
+        padding: 60px 20px;
+    }
+
+    .menu,
+    .about,
+    .contact {
+        background-attachment: scroll;
+        background-position: center;
     }
 }
