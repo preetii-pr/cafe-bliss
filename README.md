@@ -1,28 +1,27 @@
- Cafe Bliss
+☕ Brew Haven
 
-Welcome to Cafe Bliss!
+A Modern Luxury Café Website
 
-Cafe Bliss is my first website project, created while learning web development.
+Brew Haven is a responsive café website built to deliver an elegant and interactive online café experience.
 
-✨ About the Project
+✨ Features
 
-This is a work in progress as I continue learning and improving my web development skills.
+- Modern navy-blue and gold design
+- Interactive food and beverage menu
+- Add-to-cart functionality
+- Smooth animations and hover effects
+- Responsive layout
+- 360° virtual café tour (in progress)
 
-🛠️ Technologies Used
+🛠️ Tech Stack
 
-- HTML
-- CSS
-- JavaScript (when implemented)
+- HTML5
+- CSS3
+- JavaScript
+- Git & GitHub
 
-🎯 Current Goals
+🚀 Project Status
 
-- Improve the website's design
-- Add animations and interactive effects
-- Make the website responsive
-- Learn and apply new web development concepts
+Work in progress — continuously improving design, features, and user experience.
 
-🌱 Learning Journey
-
-I'm building this project step by step to strengthen my web development skills. More improvements coming soon!
-
-Status: Work in Progress 🚧
+Built with ☕ and a passion for web development.
