@@ -985,3 +985,45 @@ nav a:hover {
         scroll-behavior: auto;
     }
 }
+/* Indian Cuisine - 3 cards per row */
+.indian-menu {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 15px;
+    width: 90%;
+    margin: 20px auto;
+}
+
+/* Responsive layout */
+@media (max-width: 768px) {
+    .indian-menu {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 480px) {
+    .indian-menu {
+        grid-template-columns: 1fr;
+    }
+}
+/* Chinese Cuisine - 3 cards per row */
+.chinese-menu {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 15px;
+    width: 90%;
+    margin: 20px auto;
+}
+
+/* Responsive layout */
+@media (max-width: 768px) {
+    .chinese-menu {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 480px) {
+    .chinese-menu {
+        grid-template-columns: 1fr;
+    }
+}
