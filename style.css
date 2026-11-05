@@ -1103,3 +1103,33 @@ button:active,
         animation-duration: 0.01ms !important;
     }
 }
+/* Premium cart notification */
+.cart-notification {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    background: #253A4A;
+    color: #F7F4E3;
+    padding: 16px 24px;
+    border-left: 4px solid #E0A840;
+    border-radius: 8px;
+    opacity: 0;
+    transform: translateY(20px);
+    pointer-events: none;
+    transition: all 0.4s ease;
+    z-index: 9999;
+}
+
+.cart-notification.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+@media (max-width: 600px) {
+    .cart-notification {
+        right: 15px;
+        left: 15px;
+        bottom: 20px;
+        text-align: center;
+    }
+}
