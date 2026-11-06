@@ -1133,3 +1133,106 @@ button:active,
         text-align: center;
     }
 }
+/* =========================
+   BREW HAVEN SHOPPING CART
+========================= */
+
+.cart-section {
+    padding: 70px 20px;
+    background: #0D1419;
+    color: #F7F4E3;
+}
+
+.cart-container {
+    max-width: 850px;
+    margin: auto;
+    padding: 35px;
+    background: #253A4A;
+    border: 1px solid #E0A840;
+    border-radius: 15px;
+}
+
+.cart-container h2 {
+    color: #E0A840;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+#cart-items {
+    margin-bottom: 25px;
+}
+
+.cart-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 15px;
+    padding: 18px 0;
+    border-bottom: 1px solid #CDC6B6;
+}
+
+.cart-item p {
+    margin-top: 5px;
+    color: #CDC6B6;
+}
+
+.quantity-controls {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.quantity-controls button {
+    padding: 6px 12px;
+    background: #E0A840;
+    color: #0D1419;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.remove-item {
+    background: transparent !important;
+    color: #F7F4E3 !important;
+}
+
+.cart-total {
+    text-align: right;
+    color: #E0A840;
+    margin-top: 25px;
+}
+
+.checkout-btn {
+    width: 100%;
+    padding: 15px;
+    margin-top: 25px;
+    background: #E0A840;
+    color: #0D1419;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+.checkout-btn:hover {
+    background: #F7F4E3;
+    transform: translateY(-2px);
+}
+
+/* Mobile responsiveness */
+
+@media (max-width: 600px) {
+    .cart-container {
+        padding: 20px 15px;
+    }
+
+    .cart-item {
+        flex-wrap: wrap;
+    }
+
+    .quantity-controls {
+        flex-wrap: wrap;
+    }
+}
