@@ -467,14 +467,22 @@
     revealElements.forEach(function(element){
         observer.observe(element);
     });
-    let cartCount=0;
-    let cartTotal=0;
-    const cartDisplay=document.getElementById("cart-count");
-    const totalDisplay=document.getElementById("cart-total");
-    const cartButtons=document.querySelectorAll(".add-to-cart");
-    const cartNotification = document.getElementById("cart-notification");
+   let cartCount = 0;
+let cartTotal = 0;
+
+// Cart elements
+const cartDisplay = document.getElementById("cart-count");
+const totalDisplay = document.getElementById("cart-total");
+const cartItemsDisplay = document.getElementById("cart-items");
+const cartButtons = document.querySelectorAll(".add-to-cart");
+const cartNotification = document.getElementById("cart-notification");
+
 let notificationTimer;
 
+// Store cart products
+let cartItems = [];
+
+// Notification function
 function showCartNotification(itemName) {
     cartNotification.textContent = itemName + " added to your cart!";
     cartNotification.classList.add("show");
@@ -485,21 +493,88 @@ function showCartNotification(itemName) {
         cartNotification.classList.remove("show");
     }, 2500);
 }
-    cartButtons.forEach(function(button){
-        button.addEventListener("click",function(){
-            const itemName=button.dataset.name;
-            const itemPrice=Number(button.dataset.price);
-            cartCount++;
-            cartTotal += itemPrice;
 
-            cartDisplay.textContent=cartCount;
-            totalDisplay.textContent=cartTotal;
-            button.textContent="Added";
-            showCartNotification(itemName);
-            console.log(itemName + "added to card");
-            console.log("cart total:Rupees"+cartTotal);
+// Update cart display
+function updateCart() {
+
+    cartCount = cartItems.filter(function(item) {
+        return item.selected;
+    }).length;
+
+    cartTotal = cartItems.reduce(function(total, item) {
+        return item.selected ? total + item.price : total;
+    }, 0);
+
+    cartDisplay.textContent = cartCount;
+    totalDisplay.textContent = cartTotal;
+
+    cartItemsDisplay.innerHTML = "";
+
+    if (cartItems.length === 0) {
+        cartItemsDisplay.innerHTML = "<p>Your cart is empty.</p>";
+        return;
+    }
+
+    cartItems.forEach(function(item) {
+
+        const cartRow = document.createElement("div");
+        cartRow.className = "cart-item-row";
+
+        const checkbox = document.createElement("input");
+        checkbox.type = "checkbox";
+        checkbox.checked = item.selected;
+        checkbox.className = "cart-item-checkbox";
+
+        const itemName = document.createElement("span");
+        itemName.textContent = item.name;
+
+        const itemPrice = document.createElement("span");
+        itemPrice.textContent = "₹" + item.price;
+
+        checkbox.addEventListener("change", function() {
+            item.selected = checkbox.checked;
+            updateCart();
         });
+
+        cartRow.appendChild(checkbox);
+        cartRow.appendChild(itemName);
+        cartRow.appendChild(itemPrice);
+
+        cartItemsDisplay.appendChild(cartRow);
     });
+}
+
+// Add products to cart
+cartButtons.forEach(function(button) {
+
+    button.addEventListener("click", function() {
+
+        const itemName = button.dataset.name;
+        const itemPrice = Number(button.dataset.price);
+
+        const existingItem = cartItems.find(function(item) {
+            return item.name === itemName;
+        });
+
+        if (existingItem) {
+            existingItem.selected = true;
+        } else {
+            cartItems.push({
+                name: itemName,
+                price: itemPrice,
+                selected: true
+            });
+        }
+
+        updateCart();
+
+        button.textContent = "Added";
+
+        showCartNotification(itemName);
+
+    });
+
+});
 </script>
 <script>
     // Start the Brew Haven 360-degree tour
