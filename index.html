@@ -378,6 +378,73 @@
 
     </div>
 </section>
+<!-- CUSTOMER ORDERING SECTION -->
+<section class="ordering-section" id="order">
+    <div class="ordering-container">
+
+        <h2>Order Your Favourites</h2>
+        <p>Freshly prepared, just for you.</p>
+
+        <!-- SEARCH -->
+        <input
+            type="text"
+            id="menuSearch"
+            placeholder="Search coffee, cakes, sandwiches..."
+        >
+
+        <!-- CATEGORY FILTERS -->
+        <div class="category-buttons">
+            <button class="category-btn active" data-category="All">All</button>
+            <button class="category-btn" data-category="Coffee">Coffee</button>
+            <button class="category-btn" data-category="Desserts">Desserts</button>
+            <button class="category-btn" data-category="Food">Food</button>
+        </div>
+
+        <!-- MENU ITEMS -->
+        <div id="orderMenu" class="order-menu"></div>
+
+        <!-- CART -->
+        <div class="cart-section">
+            <h2>Your Cart (<span id="cart-count">0</span>)</h2>
+
+            <div id="cartItems"></div>
+
+            <h3>Total: ₹<span id="cartTotal">0</span></h3>
+
+            <button id="clearCart">Clear Cart</button>
+        </div>
+
+        <!-- CUSTOMER DETAILS -->
+        <div class="customer-details">
+            <h2>Customer Details</h2>
+
+            <input type="text" id="customerName"
+                placeholder="Your name">
+
+            <input type="tel" id="customerPhone"
+                placeholder="Phone number">
+
+            <select id="orderType">
+                <option value="Dine-in">Dine-in</option>
+                <option value="Takeaway">Takeaway</option>
+            </select>
+
+            <textarea id="orderNotes"
+                placeholder="Special instructions (optional)"></textarea>
+
+            <button id="placeOrder">Place Order</button>
+
+            <p id="orderMessage"></p>
+        </div>
+
+        <!-- ORDER HISTORY -->
+        <div class="order-history">
+            <h2>Previous Orders</h2>
+            <div id="orderHistory"></div>
+        </div>
+
+    </div>
+</section>
 <section id="cart" class="cart-section">
 
     <div class="cart-container">
