@@ -380,7 +380,7 @@
 </section>
 <!-- CUSTOMER ORDERING SECTION -->
 <section class="ordering-section" id="order">
-    <div class="ordering-container">
+        <div class="ordering-container">
 
         <h2>Order Your Favourites</h2>
         <p>Freshly prepared, just for you.</p>
@@ -401,15 +401,15 @@
         </div>
 
         <!-- MENU ITEMS -->
-        <div id="orderMenu" class="order-menu"></div>
+        <div id="orderMenu" class="order-menu"></div>F
 
         <!-- CART -->
         <div class="cart-section">
             <h2>Your Cart (<span id="cart-count">0</span>)</h2>
 
-            <div id="cartItems"></div>
+            <div id="cart-items"></div>
 
-            <h3>Total: ₹<span id="cartTotal">0</span></h3>
+            <h3>Total: ₹<span id="cart-total">0</span></h3>
 
             <button id="clearCart">Clear Cart</button>
         </div>
@@ -561,6 +561,7 @@ function showCartNotification(itemName) {
     }, 2500);
 }
 
+
 // Update cart display
 function updateCart() {
 
@@ -612,34 +613,93 @@ function updateCart() {
 }
 
 // Add products to cart
-cartButtons.forEach(function(button) {
+document.addEventListener("click", function(event) {
 
-    button.addEventListener("click", function() {
+    const button = event.target.closest(".add-to-cart");
 
-        const itemName = button.dataset.name;
-        const itemPrice = Number(button.dataset.price);
+    if (!button) return;
 
-        const existingItem = cartItems.find(function(item) {
-            return item.name === itemName;
-        });
+    const itemName = button.dataset.name;
+    const itemPrice = Number(button.dataset.price);
 
-        if (existingItem) {
-            existingItem.selected = true;
-        } else {
-            cartItems.push({
-                name: itemName,
-                price: itemPrice,
-                selected: true
-            });
-        }
-
-        updateCart();
-
-        button.textContent = "Added";
-
-        showCartNotification(itemName);
-
+    const existingItem = cartItems.find(function(item) {
+        return item.name === itemName;
     });
+
+    if (existingItem) {
+        existingItem.selected = true;
+    } else {
+        cartItems.push({
+            name: itemName,
+            price: itemPrice,
+            selected: true
+        });
+    }
+
+    updateCart();
+
+    button.textContent = "Added";
+
+    showCartNotification(itemName);
+
+});
+// PLACE CUSTOMER ORDER
+document.getElementById("placeOrder").addEventListener("click", function() {
+
+    const customerName = document.getElementById("customerName").value.trim();
+    const customerPhone = document.getElementById("customerPhone").value.trim();
+    const orderType = document.getElementById("orderType").value;
+    const orderNotes = document.getElementById("orderNotes").value.trim();
+
+    const selectedItems = cartItems.filter(function(item) {
+        return item.selected;
+    });
+
+    const orderMessage = document.getElementById("orderMessage");
+
+    if (!customerName || !customerPhone || !orderType) {
+        orderMessage.textContent = "Please fill in all required details.";
+        return;
+    }
+
+    if (selectedItems.length === 0) {
+        orderMessage.textContent = "Please select items from your cart.";
+        return;
+    }
+
+    const orderTotal = selectedItems.reduce(function(total, item) {
+        return total + item.price;
+    }, 0);
+    // SAVE ORDER HISTORY
+const order = {
+    customerName: customerName,
+    phone: customerPhone,
+    orderType: orderType,
+    notes: orderNotes,
+    items: selectedItems.map(function(item) {
+        return {
+            name: item.name,
+            price: item.price
+        };
+    }),
+    total: orderTotal,
+    date: new Date().toLocaleString()
+};
+
+const savedOrders = JSON.parse(
+    localStorage.getItem("brewHavenOrders") || "[]"
+);
+
+savedOrders.unshift(order);
+
+localStorage.setItem(
+    "brewHavenOrders",
+    JSON.stringify(savedOrders)
+);
+
+    orderMessage.textContent =
+        "Thank you, " + customerName +
+        "! Your order has been placed. Total: ₹" + orderTotal;
 
 });
 </script>
