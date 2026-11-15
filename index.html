@@ -709,9 +709,332 @@ localStorage.setItem(
         minHfov: 50,
         maxHfov: 120
     });
+    // BREW HAVEN ACCOUNT POPUP
+
+const bhModal = document.getElementById("bh-account-modal");
+const bhOpen = document.getElementById("bh-account-open");
+const bhClose = document.getElementById("bh-close");
+
+const bhMessage = document.getElementById("bh-account-message");
+
+// OPEN AND CLOSE POPUP
+
+bhOpen.addEventListener("click", function() {
+    bhModal.classList.add("bh-visible");
+    document.body.classList.add("bh-modal-open");
+});
+
+function closeBhModal() {
+    bhModal.classList.remove("bh-visible");
+    document.body.classList.remove("bh-modal-open");
+}
+
+bhClose.addEventListener("click", closeBhModal);
+
+bhModal.addEventListener("click", function(event) {
+    if (event.target === bhModal) {
+        closeBhModal();
+    }
+});
+
+// SWITCH LOGIN AND SIGNUP
+
+document.querySelectorAll(".bh-tab").forEach(function(tab) {
+
+    tab.addEventListener("click", function() {
+
+        document.querySelectorAll(".bh-tab").forEach(function(item) {
+            item.classList.remove("active");
+        });
+
+        tab.classList.add("active");
+
+        document.getElementById("bh-login").hidden =
+            tab.dataset.tab !== "login";
+
+        document.getElementById("bh-signup").hidden =
+            tab.dataset.tab !== "signup";
+
+        bhMessage.textContent = "";
+    });
+
+});
+
+// SWITCH EMAIL AND PHONE
+
+document.querySelectorAll(".bh-method").forEach(function(button) {
+
+    button.addEventListener("click", function() {
+
+        const parent = button.closest(".bh-form");
+
+        parent.querySelectorAll(".bh-method").forEach(function(item) {
+            item.classList.remove("active");
+        });
+
+        button.classList.add("active");
+
+        const isLogin = button.dataset.method === "email" ||
+                        button.dataset.method === "phone";
+
+        const emailId = isLogin
+            ? "bh-email-login"
+            : "bh-signup-email";
+
+        const phoneId = isLogin
+            ? "bh-phone-login"
+            : "bh-signup-phone";
+
+        parent.querySelector("#" + emailId).hidden =
+            button.dataset.method.includes("phone");
+
+        parent.querySelector("#" + phoneId).hidden =
+            !button.dataset.method.includes("phone");
+
+        bhMessage.textContent = "";
+    });
+
+});
+
+// SHOW AND HIDE PASSWORD
+
+document.querySelectorAll(".bh-eye").forEach(function(button) {
+
+    button.addEventListener("click", function() {
+
+        const password = document.getElementById(
+            button.dataset.password
+        );
+
+        if (password.type === "password") {
+            password.type = "text";
+            button.textContent = "Hide";
+        } else {
+            password.type = "password";
+            button.textContent = "Show";
+        }
+
+    });
+
+});
+
+// FORGOT PASSWORD DEMO
+
+document.getElementById("bh-forgot").addEventListener(
+    "click", function() {
+
+        bhMessage.textContent =
+            "Password recovery will be available after backend setup.";
+
+    }
+);
+
+// DEMO FORM SUBMISSIONS
+
+[
+    "bh-email-login",
+    "bh-phone-login",
+    "bh-signup-email",
+    "bh-signup-phone"
+].forEach(function(formId) {
+
+    document.getElementById(formId).addEventListener(
+        "submit", function(event) {
+
+            event.preventDefault();
+
+            bhMessage.textContent =
+                "Frontend demo only. Secure authentication is not connected yet.";
+
+        }
+    );
+
+});
+
+// OTP REQUEST DEMO
+
+document.querySelectorAll(".bh-send-otp").forEach(function(button) {
+
+    button.addEventListener("click", function() {
+
+        const form = button.closest("form");
+
+        if (!form.reportValidity()) {
+            return;
+        }
+
+        bhMessage.textContent =
+            "OTP service will be connected through the backend.";
+
+    });
+
+});
 </script>
 <div id="cart-notification" class="cart-notification">
     Item added to your cart!
+</div><!-- BREW HAVEN ACCOUNT POPUP -->
+
+<div id="bh-account-modal" class="bh-modal">
+
+    <div class="bh-modal-content">
+
+        <button class="bh-close" id="bh-close">&times;</button>
+
+        <h2>BREW HAVEN</h2>
+        <p class="bh-subtitle">Welcome to your coffee corner.</p>
+
+        <!-- LOGIN / SIGNUP TABS -->
+        <div class="bh-tabs">
+            <button class="bh-tab active" data-tab="login">
+                Login
+            </button>
+
+            <button class="bh-tab" data-tab="signup">
+                Sign Up
+            </button>
+        </div>
+
+        <!-- LOGIN FORM -->
+        <div id="bh-login" class="bh-form">
+
+            <h3>Welcome Back!</h3>
+
+            <div class="bh-auth-options">
+                <button class="bh-method active" data-method="email">
+                    Email
+                </button>
+                <button class="bh-method" data-method="phone">
+                    Phone
+                </button>
+            </div>
+
+            <form id="bh-email-login">
+
+                <input type="email"
+                    placeholder="Email address" required>
+
+                <div class="bh-password">
+                    <input type="password"
+                        id="bh-login-password"
+                        placeholder="Password" required>
+
+                    <button type="button"
+                        class="bh-eye"
+                        data-password="bh-login-password">
+                        Show
+                    </button>
+                </div>
+
+                <button type="button" id="bh-forgot">
+                    Forgot Password?
+                </button>
+
+                <button type="submit" class="bh-submit">
+                    Login
+                </button>
+
+            </form>
+
+            <form id="bh-phone-login" hidden>
+
+                <input type="tel"
+                    placeholder="Phone number"
+                    pattern="[0-9]{10}"
+                    maxlength="10" required>
+
+                <button type="button"
+                    class="bh-submit bh-send-otp">
+                    Request OTP
+                </button>
+
+                <input type="text"
+                    placeholder="Enter OTP"
+                    inputmode="numeric"
+                    maxlength="6"
+                    required>
+
+                <button type="submit" class="bh-submit">
+                    Verify & Login
+                </button>
+
+            </form>
+
+        </div>
+
+        <!-- SIGNUP FORM -->
+        <div id="bh-signup" class="bh-form" hidden>
+
+            <h3>Create Your Account</h3>
+
+            <div class="bh-auth-options">
+                <button class="bh-method active"
+                    data-method="signup-email">
+                    Email
+                </button>
+
+                <button class="bh-method"
+                    data-method="signup-phone">
+                    Phone
+                </button>
+            </div>
+
+            <form id="bh-signup-email">
+
+                <input type="text"
+                    placeholder="Full name" required>
+
+                <input type="email"
+                    placeholder="Email address" required>
+
+                <input type="password"
+                    placeholder="Create password"
+                    minlength="8" required>
+
+                <input type="password"
+                    placeholder="Confirm password"
+                    minlength="8" required>
+
+                <button type="submit" class="bh-submit">
+                    Create Account
+                </button>
+
+            </form>
+
+            <form id="bh-signup-phone" hidden>
+
+                <input type="text"
+                    placeholder="Full name" required>
+
+                <input type="tel"
+                    placeholder="Phone number"
+                    pattern="[0-9]{10}"
+                    maxlength="10" required>
+
+                <button type="button"
+                    class="bh-submit bh-send-otp">
+                    Request OTP
+                </button>
+
+                <input type="text"
+                    placeholder="Enter OTP"
+                    inputmode="numeric"
+                    maxlength="6"
+                    required>
+
+                <button type="submit" class="bh-submit">
+                    Verify & Register
+                </button>
+
+            </form>
+
+        </div>
+
+        <!-- STATUS MESSAGE -->
+        <p id="bh-account-message" aria-live="polite"></p>
+
+    </div>
+
 </div>
+
 </body>
 </html>

@@ -1370,3 +1370,161 @@ button:active,
         flex-direction: column;
     }
 }
+/* BREW HAVEN ACCOUNT POPUP */
+
+.bh-modal {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.8);
+    z-index: 9999;
+    justify-content: center;
+    align-items: center;
+    padding: 15px;
+}
+
+.bh-modal.bh-visible {
+    display: flex;
+}
+
+.bh-modal-content {
+    background: #0D1419;
+    color: #F7F4E3;
+    width: 100%;
+    max-width: 430px;
+    padding: 35px 25px;
+    border: 1px solid #E0A840;
+    border-radius: 15px;
+    position: relative;
+    max-height: 90vh;
+    overflow-y: auto;
+    text-align: center;
+    box-shadow: 0 15px 50px rgba(0,0,0,0.4);
+}
+
+.bh-modal-content h2 {
+    color: #E0A840;
+    letter-spacing: 3px;
+    margin-bottom: 8px;
+}
+
+.bh-subtitle {
+    color: #CDC6B6;
+    margin-bottom: 25px;
+}
+
+.bh-close {
+    position: absolute;
+    right: 17px;
+    top: 12px;
+    background: none;
+    border: none;
+    color: #E0A840;
+    font-size: 30px;
+    cursor: pointer;
+}
+
+.bh-tabs,
+.bh-auth-options {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.bh-tab,
+.bh-method {
+    flex: 1;
+    padding: 11px;
+    background: #253A4A;
+    border: 1px solid transparent;
+    color: #F7F4E3;
+    cursor: pointer;
+    border-radius: 7px;
+}
+
+.bh-tab.active,
+.bh-method.active {
+    background: #E0A840;
+    color: #0D1419;
+    font-weight: bold;
+}
+
+.bh-form h3 {
+    color: #E0A840;
+    margin-bottom: 20px;
+}
+
+.bh-form input {
+    width: 100%;
+    padding: 13px;
+    margin-bottom: 14px;
+    background: #F7F4E3;
+    color: #0D1419;
+    border: 1px solid #CDC6B6;
+    border-radius: 6px;
+    box-sizing: border-box;
+}
+
+.bh-form input:focus {
+    outline: 2px solid #E0A840;
+}
+
+.bh-password {
+    position: relative;
+}
+
+.bh-password input {
+    padding-right: 65px;
+}
+
+.bh-eye {
+    position: absolute;
+    right: 8px;
+    top: 9px;
+    border: none;
+    background: transparent;
+    color: #253A4A;
+    cursor: pointer;
+}
+
+#bh-forgot {
+    display: block;
+    margin: 0 0 15px auto;
+    background: none;
+    border: none;
+    color: #E0A840;
+    cursor: pointer;
+}
+
+.bh-submit {
+    width: 100%;
+    padding: 13px;
+    background: #E0A840;
+    color: #0D1419;
+    border: none;
+    border-radius: 7px;
+    font-weight: bold;
+    cursor: pointer;
+    margin-bottom: 12px;
+    transition: 0.3s;
+}
+
+.bh-submit:hover {
+    background: #F7F4E3;
+    transform: translateY(-2px);
+}
+
+#bh-account-message {
+    color: #E0A840;
+    margin-top: 15px;
+}
+
+@media (max-width: 480px) {
+    .bh-modal-content {
+        padding: 30px 18px;
+    }
+}
+
+body.bh-modal-open {
+    overflow: hidden;
+}
